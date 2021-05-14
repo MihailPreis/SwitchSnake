@@ -21,7 +21,7 @@ struct GameView: View {
 					ForEach(gameState.level[rowIndex].indices) { itemIndex in
 						Toggle("", isOn: $gameState.level[Int(rowIndex)][Int(itemIndex)].isOn.animation())
 							.toggleStyle(SwitchToggleStyle(tint: Color.green))
-							.onTapGesture {}
+							.allowsHitTesting(false)
 					}
 				}
 			}
