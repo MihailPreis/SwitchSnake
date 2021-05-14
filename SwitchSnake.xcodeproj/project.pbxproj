@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		850D018F261DA61F0031DCDB /* KeyEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D018E261DA61F0031DCDB /* KeyEventHandler.swift */; };
+		851DE8AC261F40CE006312AF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DE8AB261F40CE006312AF /* MainView.swift */; };
+		85782BA2264E8AF600B6CD9C /* GameDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85782BA1264E8AF600B6CD9C /* GameDifficulty.swift */; };
+		85782BA4264E8B0D00B6CD9C /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85782BA3264E8B0D00B6CD9C /* GameSettings.swift */; };
+		85782BA6264E9D4500B6CD9C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85782BA5264E9D4500B6CD9C /* ViewExtension.swift */; };
+		85CA618B261EEE9E0093EBE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA618A261EEE9E0093EBE0 /* Constants.swift */; };
+		85CA618F261EEF780093EBE0 /* LevelTileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA618E261EEF780093EBE0 /* LevelTileType.swift */; };
+		85CA6192261EEF980093EBE0 /* MoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA6191261EEF980093EBE0 /* MoveDirection.swift */; };
+		85CA6195261EEFA40093EBE0 /* GameOverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA6194261EEFA40093EBE0 /* GameOverType.swift */; };
+		85CA61A3261EF2800093EBE0 /* CGPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA61A2261EF2800093EBE0 /* CGPointExtension.swift */; };
+		85CA61A7261EF3950093EBE0 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA61A6261EF3950093EBE0 /* GameState.swift */; };
+		85CA61AB261F06000093EBE0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA61AA261F06000093EBE0 /* RootView.swift */; };
 		85CF0F13261D8712008595B0 /* SwitchSnakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF0F12261D8712008595B0 /* SwitchSnakeApp.swift */; };
 		85CF0F15261D8712008595B0 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF0F14261D8712008595B0 /* GameView.swift */; };
 		85CF0F17261D8715008595B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CF0F16261D8715008595B0 /* Assets.xcassets */; };
@@ -16,6 +27,17 @@
 
 /* Begin PBXFileReference section */
 		850D018E261DA61F0031DCDB /* KeyEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEventHandler.swift; sourceTree = "<group>"; };
+		851DE8AB261F40CE006312AF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		85782BA1264E8AF600B6CD9C /* GameDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDifficulty.swift; sourceTree = "<group>"; };
+		85782BA3264E8B0D00B6CD9C /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		85782BA5264E9D4500B6CD9C /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		85CA618A261EEE9E0093EBE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		85CA618E261EEF780093EBE0 /* LevelTileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTileType.swift; sourceTree = "<group>"; };
+		85CA6191261EEF980093EBE0 /* MoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDirection.swift; sourceTree = "<group>"; };
+		85CA6194261EEFA40093EBE0 /* GameOverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverType.swift; sourceTree = "<group>"; };
+		85CA61A2261EF2800093EBE0 /* CGPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtension.swift; sourceTree = "<group>"; };
+		85CA61A6261EF3950093EBE0 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		85CA61AA261F06000093EBE0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		85CF0F0F261D8712008595B0 /* SwitchSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitchSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CF0F12261D8712008595B0 /* SwitchSnakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSnakeApp.swift; sourceTree = "<group>"; };
 		85CF0F14261D8712008595B0 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -36,6 +58,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85CA618D261EEF5B0093EBE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85CA618E261EEF780093EBE0 /* LevelTileType.swift */,
+				85CA6191261EEF980093EBE0 /* MoveDirection.swift */,
+				85CA6194261EEFA40093EBE0 /* GameOverType.swift */,
+				85782BA1264E8AF600B6CD9C /* GameDifficulty.swift */,
+				85782BA3264E8B0D00B6CD9C /* GameSettings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85CA6197261EEFB50093EBE0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				85CA618A261EEE9E0093EBE0 /* Constants.swift */,
+				850D018E261DA61F0031DCDB /* KeyEventHandler.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		85CA619B261EF1FC0093EBE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				85CF0F14261D8712008595B0 /* GameView.swift */,
+				85CA61AA261F06000093EBE0 /* RootView.swift */,
+				851DE8AB261F40CE006312AF /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		85CA619C261EF2100093EBE0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				85CA61A1261EF26C0093EBE0 /* Extension */,
+				85CA619B261EF1FC0093EBE0 /* View */,
+				85CA6197261EEFB50093EBE0 /* Common */,
+				85CA618D261EEF5B0093EBE0 /* Model */,
+				85CF0F12261D8712008595B0 /* SwitchSnakeApp.swift */,
+				85CA61A6261EF3950093EBE0 /* GameState.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		85CA619D261EF21A0093EBE0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85CF0F18261D8715008595B0 /* Preview Content */,
+				85CF0F16261D8715008595B0 /* Assets.xcassets */,
+				85CF0F1B261D8715008595B0 /* Info.plist */,
+				85CF0F1C261D8715008595B0 /* SwitchSnake.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		85CA61A1261EF26C0093EBE0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				85CA61A2261EF2800093EBE0 /* CGPointExtension.swift */,
+				85782BA5264E9D4500B6CD9C /* ViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		85CF0F06261D8712008595B0 = {
 			isa = PBXGroup;
 			children = (
@@ -55,13 +141,8 @@
 		85CF0F11261D8712008595B0 /* SwitchSnake */ = {
 			isa = PBXGroup;
 			children = (
-				85CF0F12261D8712008595B0 /* SwitchSnakeApp.swift */,
-				85CF0F14261D8712008595B0 /* GameView.swift */,
-				850D018E261DA61F0031DCDB /* KeyEventHandler.swift */,
-				85CF0F16261D8715008595B0 /* Assets.xcassets */,
-				85CF0F1B261D8715008595B0 /* Info.plist */,
-				85CF0F1C261D8715008595B0 /* SwitchSnake.entitlements */,
-				85CF0F18261D8715008595B0 /* Preview Content */,
+				85CA619D261EF21A0093EBE0 /* Resources */,
+				85CA619C261EF2100093EBE0 /* Source */,
 			);
 			path = SwitchSnake;
 			sourceTree = "<group>";
@@ -143,9 +224,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85CA6192261EEF980093EBE0 /* MoveDirection.swift in Sources */,
 				850D018F261DA61F0031DCDB /* KeyEventHandler.swift in Sources */,
+				85782BA4264E8B0D00B6CD9C /* GameSettings.swift in Sources */,
 				85CF0F15261D8712008595B0 /* GameView.swift in Sources */,
+				85CA61AB261F06000093EBE0 /* RootView.swift in Sources */,
+				85782BA2264E8AF600B6CD9C /* GameDifficulty.swift in Sources */,
+				85CA6195261EEFA40093EBE0 /* GameOverType.swift in Sources */,
+				85CA618F261EEF780093EBE0 /* LevelTileType.swift in Sources */,
 				85CF0F13261D8712008595B0 /* SwitchSnakeApp.swift in Sources */,
+				851DE8AC261F40CE006312AF /* MainView.swift in Sources */,
+				85782BA6264E9D4500B6CD9C /* ViewExtension.swift in Sources */,
+				85CA61A7261EF3950093EBE0 /* GameState.swift in Sources */,
+				85CA618B261EEE9E0093EBE0 /* Constants.swift in Sources */,
+				85CA61A3261EF2800093EBE0 /* CGPointExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,12 +364,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SwitchSnake/SwitchSnake.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SwitchSnake/Resources/SwitchSnake.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"SwitchSnake/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwitchSnake/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SwitchSnake/Info.plist;
+				INFOPLIST_FILE = SwitchSnake/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -294,12 +386,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SwitchSnake/SwitchSnake.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SwitchSnake/Resources/SwitchSnake.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"SwitchSnake/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwitchSnake/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SwitchSnake/Info.plist;
+				INFOPLIST_FILE = SwitchSnake/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
