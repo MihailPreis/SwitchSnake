@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		850D018F261DA61F0031DCDB /* KeyEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D018E261DA61F0031DCDB /* KeyEventHandler.swift */; };
 		851DE8AC261F40CE006312AF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DE8AB261F40CE006312AF /* MainView.swift */; };
+		85782BA2264E8AF600B6CD9C /* GameDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85782BA1264E8AF600B6CD9C /* GameDifficulty.swift */; };
+		85782BA4264E8B0D00B6CD9C /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85782BA3264E8B0D00B6CD9C /* GameSettings.swift */; };
+		85782BA6264E9D4500B6CD9C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85782BA5264E9D4500B6CD9C /* ViewExtension.swift */; };
 		85CA618B261EEE9E0093EBE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA618A261EEE9E0093EBE0 /* Constants.swift */; };
 		85CA618F261EEF780093EBE0 /* LevelTileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA618E261EEF780093EBE0 /* LevelTileType.swift */; };
 		85CA6192261EEF980093EBE0 /* MoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CA6191261EEF980093EBE0 /* MoveDirection.swift */; };
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		850D018E261DA61F0031DCDB /* KeyEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEventHandler.swift; sourceTree = "<group>"; };
 		851DE8AB261F40CE006312AF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		85782BA1264E8AF600B6CD9C /* GameDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDifficulty.swift; sourceTree = "<group>"; };
+		85782BA3264E8B0D00B6CD9C /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		85782BA5264E9D4500B6CD9C /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		85CA618A261EEE9E0093EBE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		85CA618E261EEF780093EBE0 /* LevelTileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTileType.swift; sourceTree = "<group>"; };
 		85CA6191261EEF980093EBE0 /* MoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDirection.swift; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 				85CA618E261EEF780093EBE0 /* LevelTileType.swift */,
 				85CA6191261EEF980093EBE0 /* MoveDirection.swift */,
 				85CA6194261EEFA40093EBE0 /* GameOverType.swift */,
+				85782BA1264E8AF600B6CD9C /* GameDifficulty.swift */,
+				85782BA3264E8B0D00B6CD9C /* GameSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				85CA61A2261EF2800093EBE0 /* CGPointExtension.swift */,
+				85782BA5264E9D4500B6CD9C /* ViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -217,12 +226,15 @@
 			files = (
 				85CA6192261EEF980093EBE0 /* MoveDirection.swift in Sources */,
 				850D018F261DA61F0031DCDB /* KeyEventHandler.swift in Sources */,
+				85782BA4264E8B0D00B6CD9C /* GameSettings.swift in Sources */,
 				85CF0F15261D8712008595B0 /* GameView.swift in Sources */,
 				85CA61AB261F06000093EBE0 /* RootView.swift in Sources */,
+				85782BA2264E8AF600B6CD9C /* GameDifficulty.swift in Sources */,
 				85CA6195261EEFA40093EBE0 /* GameOverType.swift in Sources */,
 				85CA618F261EEF780093EBE0 /* LevelTileType.swift in Sources */,
 				85CF0F13261D8712008595B0 /* SwitchSnakeApp.swift in Sources */,
 				851DE8AC261F40CE006312AF /* MainView.swift in Sources */,
+				85782BA6264E9D4500B6CD9C /* ViewExtension.swift in Sources */,
 				85CA61A7261EF3950093EBE0 /* GameState.swift in Sources */,
 				85CA618B261EEE9E0093EBE0 /* Constants.swift in Sources */,
 				85CA61A3261EF2800093EBE0 /* CGPointExtension.swift in Sources */,

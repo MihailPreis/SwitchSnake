@@ -8,16 +8,28 @@
 import SwiftUI
 
 struct MainView: View {
-	@Binding var isShowGame: Bool
+	@ObservedObject var settings: GameSettings
 
 	var body: some View {
 		VStack{
-			Button("NEXT") {
-				withAnimation {
-					isShowGame = true
+			Text("Difficulty")
+
+			Picker(selection: $settings.difficulty, label: EmptyView()) {
+				ForEach(GameDifficulty.allCases, id: \.self) { item in
+					Text(item.rawValue)
 				}
 			}
-			Text("This is the first view")
+			.pickerStyle(SegmentedPickerStyle())
+			.scaledToFit()
+
+			Toggle("Wall mode", isOn: $settings.isWallMode)
+				.toggleStyle(SwitchToggleStyle(tint: Color.green))
+				.padding(.top, 20)
+
+			Button("NEW GAME") {
+				settings.isShowGame = true
+			}
+			.padding(.top, 30)
 		}
 	}
 }

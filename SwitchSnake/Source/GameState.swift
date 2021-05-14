@@ -8,16 +8,19 @@
 import SwiftUI
 
 class GameState: ObservableObject {
+	private var timer: Timer?
+
 	@Published var level: [[LevelTileType]] = emptyLevel
-	@Published var title = makeTitle(score: 0)
+	@Published var title = makeTitle(score: 0, difficulty: .easy, wallMode: true)
 	@Published var hasApple = false
 	@Published var snakeLen = Constants.START_SNAKE_LENGTH {
-		didSet { title = GameState.makeTitle(score: snakeLen - Constants.START_SNAKE_LENGTH) }
+		didSet { updateTitle() }
 	}
 	@Published var snakePath: [CGPoint] = []
 	@Published var moveDirection: MoveDirection = .right
 	@Published var moveDirectionBuffer: MoveDirection?
 	@Published var isPause = false
+	@Published var difficulty: GameDifficulty = .easy
 	@Published var wallMode = true
 	@Published var isShowGameOverAlert = false
 	@Published var gameOverType: GameOverType = .none {
@@ -28,7 +31,31 @@ class GameState: ObservableObject {
 		KeyEventHandling(handler: self.keyHandler(_:))
 	}
 
-	func tick(isFocused: Bool) {
+	deinit {
+		timer?.invalidate()
+	}
+
+	func run(check: @escaping () -> Bool) {
+		reset()
+		timer = Timer.scheduledTimer(withTimeInterval: difficulty.interval, repeats: true) { [weak self] _ in
+			self?.tick(isFocused: check())
+		}
+	}
+
+	func reset() {
+		timer?.invalidate()
+		level = GameState.emptyLevel
+		updateTitle()
+		hasApple = false
+		snakeLen = Constants.START_SNAKE_LENGTH
+		snakePath = []
+		moveDirection = .right
+		moveDirectionBuffer = nil
+		isPause = false
+		gameOverType = .none
+	}
+
+	private func tick(isFocused: Bool) {
 		if (snakePath.isEmpty && snakeLen > 0) {
 			snakePath = genSnakePath()
 		}
@@ -40,16 +67,8 @@ class GameState: ObservableObject {
 		move()
 	}
 
-	func reset() {
-		level = Array(repeating: Array(repeating: .empty, count: Constants.TILE_WIDTH), count: Constants.TILE_HEIGHT)
-		title = GameState.makeTitle(score: 0)
-		hasApple = false
-		snakeLen = Constants.START_SNAKE_LENGTH
-		snakePath = []
-		moveDirection = .right
-		moveDirectionBuffer = nil
-		isPause = false
-		gameOverType = .none
+	private func updateTitle() {
+		title = GameState.makeTitle(score: snakeLen - Constants.START_SNAKE_LENGTH, difficulty: difficulty, wallMode: wallMode)
 	}
 
 	private func move() {
@@ -131,7 +150,10 @@ class GameState: ObservableObject {
 		case .pause:
 			isPause.toggle()
 		case .restart:
+			let _buffer = timer
+			timer = nil
 			reset()
+			timer = _buffer
 		}
 	}
 
@@ -157,7 +179,15 @@ class GameState: ObservableObject {
 		Array(repeating: Array(repeating: .empty, count: Constants.TILE_WIDTH), count: Constants.TILE_HEIGHT)
 	}
 
-	private static func makeTitle(score: Int, isFirst: Bool = false) -> String {
-		"🐍 - Score: \(score)"
+	private static func makeTitle(score: Int, difficulty: GameDifficulty, wallMode: Bool) -> String {
+		var items: [String] = ["🐍 - Score: \(score)", difficulty.icon]
+		if wallMode {
+			items.append("WALL MODE")
+		}
+		return items.joined(separator: " | ")
+	}
+
+	static func convert(index: Int, width: Int) -> (Int, Int) {
+		(index / width, index % width)
 	}
 }

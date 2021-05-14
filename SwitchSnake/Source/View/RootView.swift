@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct RootView: View {
-	@State private var isShowGame = false
+	@ObservedObject private var settings = GameSettings()
 
 	var body: some View {
-		if !isShowGame {
-			MainView(isShowGame: $isShowGame)
-				.navigationTitle("🐍 SwitchSnake 🐍")
-				.frame(maxWidth: .infinity, maxHeight: .infinity)
-				.background(Color.blue)
-		}
-		if isShowGame {
+		ZStack {
+			MainView(settings: settings)
+				.hidden(settings.isShowGame)
 			GameView()
+				.environmentObject(settings)
+				.hidden(!settings.isShowGame)
 		}
+		.navigationTitle(settings.title)
 	}
 }

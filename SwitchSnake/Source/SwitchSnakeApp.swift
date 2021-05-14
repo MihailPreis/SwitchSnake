@@ -15,6 +15,8 @@ struct SwitchSnakeApp: App {
 	var body: some Scene {
 		WindowGroup {
 			RootView()
+				.scaledToFit()
+				.fixedSize()
 				.onAppear {
 					NSWindow.allowsAutomaticWindowTabbing = false
 					NSApplication.shared.windows.forEach { $0.tabbingMode = .disallowed }

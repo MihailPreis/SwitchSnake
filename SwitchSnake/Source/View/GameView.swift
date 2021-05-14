@@ -9,10 +9,9 @@ import SwiftUI
 import Combine
 
 struct GameView: View {
-	private var gameLoop = Timer.publish(every: 1.0 / Constants.FPS, tolerance: 0.1, on: .current, in: .common).autoconnect()
 	@EnvironmentObject private var appDelegate: AppDelegate
+	@EnvironmentObject private var settings: GameSettings
 	@ObservedObject private var gameState = GameState()
-	@State private var isAppeared = false
 
 	var body: some View {
 		VStack {
@@ -26,32 +25,27 @@ struct GameView: View {
 				}
 			}
 		}
-		.navigationTitle(gameState.title)
+		.navigationTitle(settings.isShowGame ? gameState.title : settings.title)
 		.padding([.top, .trailing,. bottom], 10)
 		.background(gameState.keyEventHandling)
-		.onReceive(gameLoop) { _ in
-			gameState.tick(isFocused: appDelegate.isFocused && isAppeared)
+		.onReceive(settings.$isShowGame) { isShowGame in
+			if !isShowGame {
+				gameState.reset()
+			} else {
+				gameState.difficulty = settings.difficulty
+				gameState.wallMode = settings.isWallMode
+				gameState.run {
+					self.appDelegate.isFocused
+				}
+			}
 		}
 		.alert(isPresented: $gameState.isShowGameOverAlert) {
 			Alert(
 				title: Text("👾 GAME OVER 👾"),
 				message: Text(gameState.gameOverType.message),
-				primaryButton: .default(Text("New game"), action: { self.gameState.reset() }),
+				primaryButton: .default(Text("New game"), action: { self.settings.isShowGame = false }),
 				secondaryButton: .destructive(Text("EXIT"), action: { exit(EXIT_SUCCESS) })
 			)
 		}
-		.onAppear {
-			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-				isAppeared = true
-			}
-		}
 	}
 }
-
-#if DEBUG
-struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		GameView()
-	}
-}
-#endif
