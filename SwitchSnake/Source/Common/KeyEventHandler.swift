@@ -45,12 +45,9 @@ private class KeyView: NSView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	override func keyUp(with event: NSEvent) {
-		super.keyUp(with: event)
-		guard let keyType = KeyType(rawValue: Int(event.keyCode)) else {
-			return
-		}
-		handler(keyType)
+	override func keyDown(with event: NSEvent) {
+		KeyType(rawValue: Int(event.keyCode))
+			.flatMap { handler($0) }
 	}
 
 	func withMakeFirstResponder() -> Self {
